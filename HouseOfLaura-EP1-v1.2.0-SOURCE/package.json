@@ -1,0 +1,50 @@
+{
+  "name": "houseoflaura",
+  "productName": "House of Laura",
+  "version": "1.2.0",
+  "description": "House of Laura · Épisode I",
+  "author": "House of Laura",
+  "license": "UNLICENSED",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.houseoflaura.episode1",
+    "productName": "House of Laura",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "index.html",
+      "js/**/*",
+      "audio/**/*",
+      "electron/main.js",
+      "!**/*.map"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "HouseOfLaura-EP1.exe",
+      "icon": "build/icon.ico"
+    },
+    "portable": {
+      "artifactName": "HouseOfLaura-EP1.exe",
+      "unicode": true,
+      "requestExecutionLevel": "user"
+    }
+  }
+}
